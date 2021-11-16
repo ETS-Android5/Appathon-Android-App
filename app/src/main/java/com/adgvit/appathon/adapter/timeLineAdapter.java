@@ -59,8 +59,8 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
         //Log.i("isCompleted",isCompleted);
         if(isCompleted.equals("true") && isFirst.equals("true")){
             Log.i("Type","Top Done");
-            holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_blue));
-            holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_blue));
+            holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
+            holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventLink.setVisibility(View.VISIBLE);
             holder.eventLink.setEnabled(true);
             holder.imageTimeline.setImageResource(R.drawable.ic_topdone);
@@ -75,8 +75,8 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
         }
         else if(isCompleted.equals("true") && isFirst.equals("false")){
             Log.i("Type","Middle Done");
-            holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_blue));
-            holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_blue));
+            holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
+            holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventLink.setVisibility(View.VISIBLE);
             holder.eventLink.setEnabled(true);
             holder.imageTimeline.setImageResource(R.drawable.ic_middledone);

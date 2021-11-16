@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="130dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
     android:background="#000000"
@@ -20,17 +21,42 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/eventTimeID"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/circular_std"
             android:text="12:00 PM"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/eventLink"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/corner_radius_ongoingbtn"
+                android:fontFamily="@font/circular_std"
+                android:text="Ongoing"
+                android:textAllCaps="false"
+                android:textColor="#B18DFF"
+                app:layout_constraintStart_toEndOf="@+id/eventTimeID"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                android:textSize="12sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/eventNameID"
@@ -56,22 +82,6 @@
             android:textColor="#AEAEB2"
             android:textSize="12sp"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/eventLink"
-            android:layout_width="75dp"
-            android:layout_height="14dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/helveticaneue_regular"
-            android:text="Watch Live >"
-            android:textAllCaps="false"
-            android:textColor="#307FE2"
-            android:textSize="12dp"
-
-            />
 
 
     </LinearLayout>

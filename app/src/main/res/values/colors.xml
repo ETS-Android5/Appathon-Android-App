@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="timeline_black">#2C2C2E</color>
     <color name="timeline_blue">#007AFF</color>
+    <color name="timeline_purple">#5123B5</color>
 
     <color name="fragment_background">#ffffff</color>
     //Timeline

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/corner_radius_ongoingbtn.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/ic_middle.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/ic_middledone.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/ic_top1.xml" value="0.20052083333333334" />
@@ -14,7 +15,7 @@
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_timeline.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_tracks.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_tracks2.xml" value="0.14855072463768115" />
-        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/timelinerecycleritem.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/timelinerecycleritem.xml" value="0.6" />
       </map>
     </option>
   </component>
