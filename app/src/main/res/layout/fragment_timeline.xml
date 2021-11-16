@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".timeline"
     android:orientation="vertical"
-    android:background="@color/fragment_background">
+    android:background="#000000">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
@@ -45,6 +44,7 @@
                 android:id="@+id/timelineLinearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -56,10 +56,10 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="30dp"
-                    android:fontFamily="@font/helveticaneue_medium"
+                    android:fontFamily="@font/circular_std"
                     android:text="Timeline"
-                    android:textColor="@color/timelineHeading"
-                    android:textSize="34dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -70,47 +70,76 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/sfpro"
+                android:fontFamily="@font/circular_std"
                 android:text="Day 2"
-                android:textColor="@color/timelineSubHeading"
-                android:textSize="24dp"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/day1RecyclerView" />
+
+            <TextView
+                android:id="@+id/day2date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/circular_std"
+                android:layout_marginStart="16dp"
+                android:textColor="#8E8E93"
+                android:textSize="14sp"
+                android:text="Saturday, 10 Apr 2021"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/day2TextView"
+                android:layout_marginLeft="16dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/day2RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="28dp"
                 android:paddingBottom="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day2TextView" />
+                app:layout_constraintTop_toBottomOf="@+id/day2date" />
 
             <TextView
                 android:id="@+id/day1TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="17dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/sfpro"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/circular_std"
                 android:text="Day 1"
-                android:textColor="@color/timelineSubHeading"
-                android:textSize="24dp"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/timelineLinearLayout" />
+
+            <TextView
+                android:id="@+id/day1date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/circular_std"
+                android:layout_marginStart="16dp"
+                android:textColor="#8E8E93"
+                android:textSize="14sp"
+                android:text="Saturday, 10 Apr 2021"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/day1TextView"
+                android:layout_marginLeft="16dp" />
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/day1RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="28dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day1TextView" />
+                app:layout_constraintTop_toBottomOf="@+id/day1date" />
 
             <TextView
                 android:id="@+id/day3TextView"
@@ -120,20 +149,35 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/sfpro"
                 android:text="Day 3"
-                android:textColor="@color/timelineSubHeading"
+                android:textColor="#ffffff"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/day2RecyclerView" />
 
+            <TextView
+                android:id="@+id/day3date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/circular_std"
+                android:layout_marginStart="16dp"
+                android:textColor="#8E8E93"
+                android:textSize="14sp"
+                android:text="Saturday, 10 Apr 2021"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/day3TextView"
+                android:layout_marginLeft="16dp" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/day3RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day3TextView" />
+                app:layout_constraintTop_toBottomOf="@+id/day3date" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
