@@ -28,14 +28,17 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
     }
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView eventTime,eventName,eventDescription,eventLink;
-        ImageView imageTimeline;
+        ImageView imageTopDone,imageTopNotDone,imageMiddleDone,imageMiddleNotDone;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             eventTime = itemView.findViewById(R.id.eventTimeID);
             eventName=itemView.findViewById(R.id.eventNameID);
             eventDescription = itemView.findViewById(R.id.eventIntro);
             eventLink = itemView.findViewById(R.id.eventLink);
-            imageTimeline = itemView.findViewById(R.id.timelineStatus);
+            imageTopDone = itemView.findViewById(R.id.timelinetopdone);
+            imageTopNotDone = itemView.findViewById(R.id.timelinetopnotdone);
+            imageMiddleDone = itemView.findViewById(R.id.timelinemiddledone);
+            imageMiddleNotDone = itemView.findViewById(R.id.timelinemiddlenotdone);
         }
     }
 
@@ -63,7 +66,10 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventLink.setVisibility(View.VISIBLE);
             holder.eventLink.setEnabled(true);
-            holder.imageTimeline.setImageResource(R.drawable.ic_topdone);
+            holder.imageTopDone.setVisibility(View.VISIBLE);
+            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
         }
         else if(isCompleted.equals("false") && isFirst.equals("true")){
             Log.i("Type","Top");
@@ -71,7 +77,11 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
             holder.eventLink.setVisibility(View.INVISIBLE);
             holder.eventLink.setEnabled(false);
-            holder.imageTimeline.setImageResource(R.drawable.ic_top1);
+            holder.imageTopNotDone.setVisibility(View.VISIBLE);
+            holder.imageTopDone.setVisibility(View.INVISIBLE);
+            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
+
         }
         else if(isCompleted.equals("true") && isFirst.equals("false")){
             Log.i("Type","Middle Done");
@@ -79,7 +89,10 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventLink.setVisibility(View.VISIBLE);
             holder.eventLink.setEnabled(true);
-            holder.imageTimeline.setImageResource(R.drawable.ic_middledone);
+            holder.imageMiddleDone.setVisibility(View.VISIBLE);
+            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+            holder.imageTopDone.setVisibility(View.INVISIBLE);
+            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
         }
         else if(isCompleted.equals("false") && isFirst.equals("false")){
             Log.i("Type","Middle");
@@ -87,7 +100,10 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
             holder.eventLink.setVisibility(View.INVISIBLE);
             holder.eventLink.setEnabled(false);
-            holder.imageTimeline.setImageResource(R.drawable.ic_middle);
+            holder.imageMiddleNotDone.setVisibility(View.VISIBLE);
+            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+            holder.imageTopDone.setVisibility(View.INVISIBLE);
         }
         else {
             Log.i("Type","Else");
