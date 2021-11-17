@@ -9,10 +9,11 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/faqBack"
+        app:cardBackgroundColor="@color/faqSearchBack"
         app:cardCornerRadius="10dp"
         tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp">
+        tools:layout_editor_absoluteY="20dp"
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
