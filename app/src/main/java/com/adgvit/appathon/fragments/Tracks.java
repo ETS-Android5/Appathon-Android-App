@@ -50,8 +50,10 @@ public class Tracks extends Fragment {
         view = inflater.inflate(R.layout.fragment_track, container, false);
         courseModelArrayList = new ArrayList<>();
         recyclerView1 = view.findViewById(R.id.recyclerview);
-        courseModelArrayList.add(new trackDomain("Track 1", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. About Hello, Lorem ipsum dolor sit amet."));
-        courseModelArrayList.add(new trackDomain("Track 2", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. About Hello, Lorem ipsum dolor sit amet."));
+        courseModelArrayList.add(new trackDomain("Track #1", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+                "About Hello, Lorem ipsum dolor sit amet."));
+        courseModelArrayList.add(new trackDomain("Track #2", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+                "About Hello, Lorem ipsum dolor sit amet."));
         adapter();
 
         return view;

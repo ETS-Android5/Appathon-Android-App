@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
         android:layout_marginTop="64dp"
+        android:paddingTop="64dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="67dp">
 
@@ -24,9 +25,9 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/helveticaneue_medium"
-            android:text="TRACKS"
+            android:text="Tracks"
             android:textColor="@color/white"
-            android:textSize="34dp"
+            android:textSize="35dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
