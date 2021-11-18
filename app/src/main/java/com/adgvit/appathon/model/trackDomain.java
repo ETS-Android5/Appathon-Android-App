@@ -1,30 +1,37 @@
 package com.adgvit.appathon.model;
 
 public class trackDomain {
-    String domainName;
-    String noOfTracks;
+    private String track_name;
+    private String heading;
+    private String content;
 
-    public trackDomain(){
-
-    }
-    public trackDomain(String domainName, String noOfTracks) {
-        this.domainName = domainName;
-        this.noOfTracks = noOfTracks;
-    }
-
-    public String getDomainName() {
-        return domainName;
+    public trackDomain(String track_name, String heading, String content) {
+        this.track_name = track_name;
+        this.heading = heading;
+        this.content = content;
     }
 
-    public void setDomainName(String domainName) {
-        this.domainName = domainName;
+    public String getTrack_name() {
+        return track_name;
     }
 
-    public String getNoOfTracks() {
-        return noOfTracks;
+    public void setTrack_name(String track_name) {
+        this.track_name = track_name;
     }
 
-    public void setNoOfTracks(String noOfTracks) {
-        this.noOfTracks = noOfTracks;
+    public String getHeading() {
+        return heading;
+    }
+
+    public void setHeading(String heading) {
+        this.heading = heading;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

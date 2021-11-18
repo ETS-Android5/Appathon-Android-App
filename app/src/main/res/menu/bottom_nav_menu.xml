@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/timeline"
+    android:icon="@drawable/timeline"
+    tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/files"
+        android:icon="@drawable/files"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/scholar"
+        android:icon="@drawable/scholar"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/question"
+        android:icon="@drawable/question"
+        tools:ignore="MenuTitle" />
+
+
+
+</menu>
