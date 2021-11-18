@@ -9,44 +9,49 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/faqSearchBack"
-        app:cardCornerRadius="10dp"
-        tools:layout_editor_absoluteX="20dp"
+        app:cardBackgroundColor="@color/faqBack"
+        app:cardCornerRadius="17dp"
+        tools:layout_editor_absoluteX="17dp"
         tools:layout_editor_absoluteY="20dp"
-        tools:ignore="MissingConstraints">
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background=" #121212">
 
             <TextView
                 android:id="@+id/faqQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helveticaneue_regular"
-                android:textStyle="bold"
                 android:paddingLeft="13dp"
                 android:paddingTop="14dp"
                 android:text="Q. Will ODs be provided?"
-                android:textColor="#0A84FF"
+                android:textColor="#FFFFFF"
                 android:textSize="14dp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:fontFamily="@font/circular_std" />
 
             <TextView
                 android:id="@+id/faqAnswer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/helveticaneue_regular"
-                android:textStyle="bold"
                 android:paddingLeft="13dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="14dp"
                 android:text="ODs will be provided to the participants for attending the workshops and events."
-                android:textColor="@color/faqAnswer"
+                android:textColor="#AEAEB2"
                 android:textSize="12dp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/faqQuestion" />
+                app:layout_constraintTop_toBottomOf="@+id/faqQuestion"
+                tools:fontFamily="@font/circular_std" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
