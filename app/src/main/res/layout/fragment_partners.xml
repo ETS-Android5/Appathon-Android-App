@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".partners"
-    android:background="@color/fragment_background">
+    android:background="@color/black">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/partnersAnimationView"
@@ -40,34 +39,31 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical">
 
-            <Button
+            <ImageView
                 android:id="@+id/aboutUsButton"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_info_24"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginTop="57dp"
+                app:layout_constraintHorizontal_bias="0.95"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:background="@drawable/loginbtnbg"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:text="About Us"
                 android:textAllCaps="false"
-                android:textColor="@color/joinDiscordText"
-                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/speakerRecyclerView" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/aboutUsButton">
 
                 <TextView
                     android:id="@+id/partnersHead"
@@ -75,11 +71,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="30dp"
-                    android:fontFamily="@font/helveticaneue_medium"
+                    android:fontFamily="@font/circular_std"
                     android:text="Partners"
-                    android:textColor="@color/timelineHeading"
-                    android:textSize="34dp"
+                    android:textColor="@color/white"
+                    android:textSize="34sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -90,10 +85,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/sfpro"
+                android:fontFamily="@font/circular_std"
                 android:text="Sponsors"
-                android:textColor="@color/timelineSubHeading"
-                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -105,9 +100,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="12dp"
-                android:fontFamily="@font/robotolight"
+                android:fontFamily="@font/circular_std"
                 android:text="Here are the brands that are part of HackGrid 2021"
-                android:textColor="@color/timelineSubSub"
+                android:textColor="#8E8E93"
                 android:textSize="14dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -118,11 +113,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:orientation="horizontal"
                 android:padding="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/problemIntro" />
+                app:layout_constraintTop_toBottomOf="@+id/problemIntro"
+                android:layout_marginLeft="16dp" />
 
             <TextView
                 android:id="@+id/speakerHeader"
@@ -131,10 +130,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="25dp"
-                android:fontFamily="@font/sfpro"
+                android:fontFamily="@font/circular_std"
                 android:text="Speakers"
-                android:textColor="@color/timelineSubHeading"
-                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sponsorRecyclerView" />
@@ -146,10 +145,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="13dp"
-                android:fontFamily="@font/robotolight"
+                android:fontFamily="@font/circular_std"
                 android:text="Here are the brands that are part of Hackgrid 2021"
-                android:textColor="@color/timelineSubSub"
-                android:textSize="14dp"
+                android:textColor="#8E8E93"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/speakerHeader"
