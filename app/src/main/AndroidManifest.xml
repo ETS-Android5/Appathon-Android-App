@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adgvit.appathon">
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackgrid">
-        <activity android:name="com.adgvit.appathon.activity.MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true" />
+        <activity android:name=".activity.Flash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,13 +24,12 @@
         </activity>
 
         <service
-            android:name="com.adgvit.appathon.FirebaseNotificationService"
+            android:name=".FirebaseNotificationService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>
