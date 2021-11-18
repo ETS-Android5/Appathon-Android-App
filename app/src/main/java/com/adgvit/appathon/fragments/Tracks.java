@@ -9,17 +9,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.adgvit.appathon.NetworkInterface.NetworkAPI;
 import com.adgvit.appathon.R;
 import com.adgvit.appathon.adapter.trackAdapter;
 import com.adgvit.appathon.model.trackDomain;
+import com.adgvit.appathon.networkmodels.Track;
+import com.adgvit.appathon.NetworkUtils.NetworkUtils;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Tracks extends Fragment {
 
     private RecyclerView recyclerView1;
-    private ArrayList<trackDomain> courseModelArrayList;
+    private ArrayList<Track> courseModelArrayList;
     View view;
 
 
@@ -48,13 +57,42 @@ public class Tracks extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_track, container, false);
-        courseModelArrayList = new ArrayList<>();
+       courseModelArrayList = new ArrayList<>();
         recyclerView1 = view.findViewById(R.id.recyclerview);
-        courseModelArrayList.add(new trackDomain("Track #1", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                "About Hello, Lorem ipsum dolor sit amet."));
-        courseModelArrayList.add(new trackDomain("Track #2", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                "About Hello, Lorem ipsum dolor sit amet."));
-        adapter();
+//        courseModelArrayList.add(new trackDomain("Track #1", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+//                "About Hello, Lorem ipsum dolor sit amet."));
+//        courseModelArrayList.add(new trackDomain("Track #2", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+//                "About Hello, Lorem ipsum dolor sit amet."));
+
+        try {
+            Call<List<Track>> call = NetworkUtils.networkAPI.getTrack();
+            call.enqueue(new Callback<List<Track>>() {
+                @Override
+                public void onResponse(Call<List<Track>> call, Response<List<Track>> response) {
+                    if(!response.isSuccessful()){
+                        Toast.makeText(getContext(), "Code "+ response.code() + " error "+response.message(),
+                                Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    List<Track> tracks = response.body();
+                    for (Track p:tracks){
+                        courseModelArrayList.add(p);
+                    }
+                    System.out.println("Size" + courseModelArrayList.size());
+                    adapter();
+                }
+
+                @Override
+                public void onFailure(Call<List<Track>> call, Throwable t) {
+                    Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+
+                }
+            });
+        }
+        catch (Exception e){
+            Toast.makeText(getContext(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+        }
+
 
         return view;
     }
@@ -63,7 +101,8 @@ public class Tracks extends Fragment {
 
     public void adapter(){
         trackAdapter customAdapter = new trackAdapter(this, courseModelArrayList);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(),
+                LinearLayoutManager.VERTICAL, false);
         recyclerView1.setLayoutManager(linearLayoutManager);
         recyclerView1.setAdapter(customAdapter);
 
