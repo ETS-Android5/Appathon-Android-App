@@ -12,15 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.adgvit.appathon.R;
 import com.adgvit.appathon.fragments.Tracks;
 import com.adgvit.appathon.model.trackDomain;
+import com.adgvit.appathon.networkmodels.Track;
 
 import java.util.ArrayList;
 
 public class trackAdapter extends RecyclerView.Adapter<trackAdapter.Viewholder> {
 
     private Tracks context;
-    private ArrayList<trackDomain> courseModelArrayList;
+    private ArrayList<Track> courseModelArrayList;
 
-    public trackAdapter(Tracks context, ArrayList<trackDomain> courseModelArrayList) {
+    public trackAdapter(Tracks context, ArrayList<Track> courseModelArrayList) {
         this.context = context;
         this.courseModelArrayList = courseModelArrayList;
     }
@@ -35,18 +36,21 @@ public class trackAdapter extends RecyclerView.Adapter<trackAdapter.Viewholder> 
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        trackDomain model = courseModelArrayList.get(position);
-        holder.track.setText(model.getTrack_name());
-        holder.heading.setText(model.getHeading());
-        holder.content.setText(model.getContent());
+        Track model = courseModelArrayList.get(position);
+        holder.track.setText("Track#"+ position + 1);
+        holder.heading.setText(model.getTitle());
+        holder.content.setText(model.getDescription());
     }
 
 
     @Override
     public int getItemCount() {
         // this method is used for showing number
+
         // of card items in recycler view.
+        System.out.println("Size "+courseModelArrayList.size());
         return courseModelArrayList.size();
+
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
