@@ -1,30 +1,30 @@
 package com.adgvit.appathon.model;
 
 public class SpeakerModel {
-    String speakerImage;
-    String speakerName;
+    String picture;
+    String name;
     String speakerDesignation;
 
-    public SpeakerModel(String speakerImage, String speakerName, String speakerDesignation) {
-        this.speakerImage = speakerImage;
-        this.speakerName = speakerName;
+    public SpeakerModel(String picture, String name, String speakerDesignation) {
+        this.picture = picture;
+        this.name = name;
         this.speakerDesignation = speakerDesignation;
     }
 
-    public String getSpeakerImage() {
-        return speakerImage;
+    public String getPicture() {
+        return picture;
     }
 
-    public void setSpeakerImage(String speakerImage) {
-        this.speakerImage = speakerImage;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
-    public String getSpeakerName() {
-        return speakerName;
+    public String getName() {
+        return name;
     }
 
-    public void setSpeakerName(String speakerName) {
-        this.speakerName = speakerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSpeakerDesignation() {

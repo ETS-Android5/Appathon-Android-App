@@ -35,9 +35,12 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         SpeakerModel model = speakerList.get(position);
-        holder.speakerName.setText(model.getSpeakerName());
+        holder.speakerName.setText(model.getName());
         holder.speakerDesignation.setText(model.getSpeakerDesignation());
-        Glide.with(mContext).load(model.getSpeakerImage()).into(holder.speakerImage);
+
+        System.out.println(speakerList.get(position).getName() + " , " + speakerList.get(position).getPicture());
+
+        Glide.with(mContext).load(model.getPicture()).into(holder.speakerImage);
 
     }
 

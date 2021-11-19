@@ -14,12 +14,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.adgvit.appathon.NetworkUtils.NetworkUtils;
 import com.adgvit.appathon.R;
 import com.adgvit.appathon.adapter.SpeakerAdapter;
 import com.adgvit.appathon.adapter.SponsorsAdapter;
 import com.adgvit.appathon.model.SpeakerModel;
 import com.adgvit.appathon.model.SponsorsModel;
+import com.adgvit.appathon.networkmodels.Speakers;
+import com.adgvit.appathon.networkmodels.Track;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,15 +34,20 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class partners extends Fragment {
     View view;
     List<SponsorsModel> sponsorsList;
-    List<SpeakerModel> speakerList;
+//    List<SpeakerModel> speakerList;
     RecyclerView sponsorRecyclerView,speakerRecyclerView;
     ImageView aboutUs;
     DatabaseReference myref,myref1;
     LottieAnimationView animation;
     ConstraintLayout ui1;
+    List<SpeakerModel> speakersList;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,13 +69,13 @@ public class partners extends Fragment {
         ui1.setVisibility(View.INVISIBLE);
 
         sponsorsList =new ArrayList<>();
-        speakerList = new ArrayList<>();
+        speakersList = new ArrayList<>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myref = database.getReference("Partners").child("sponsors");
-        myref1 = database.getReference("Partners").child("speakers");
+        //myref1 = database.getReference("Partners").child("speakers");
         addData();
         adapter1();
-        adapter2();
+        //adapter2();
         onclickListeners();
         return view;
     }
@@ -95,13 +104,13 @@ public class partners extends Fragment {
             animation.setVisibility(View.INVISIBLE);
         }
     }
-    public void adapter2(){
-        SpeakerAdapter adapter = new SpeakerAdapter(speakerList,view.getContext());
+    public void adapter2(List<SpeakerModel> speakersList1){
+        SpeakerAdapter adapter = new SpeakerAdapter(speakersList1,view.getContext());
         GridLayoutManager manager = new GridLayoutManager(view.getContext(),2);
         manager.setOrientation(RecyclerView.VERTICAL);
         speakerRecyclerView.setLayoutManager(manager);
         speakerRecyclerView.setAdapter(adapter);
-        if (speakerList.isEmpty()){
+        if (speakersList1.isEmpty()){
             ui1.setVisibility(View.INVISIBLE);
             animation.setVisibility(View.VISIBLE);
 
@@ -128,20 +137,44 @@ public class partners extends Fragment {
 
             }
         });
-        myref1.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds:snapshot.getChildren()){
-                    SpeakerModel model = ds.getValue(SpeakerModel.class);
-                    speakerList.add(model);
+//        myref1.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for(DataSnapshot ds:snapshot.getChildren()){
+//                    SpeakerModel model = ds.getValue(SpeakerModel.class);
+//                    speakerList.add(model);
+//                }
+//                adapter2();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+
+        try {
+            Call<List<SpeakerModel>> call = NetworkUtils.networkAPI.getSpeakers();
+            call.enqueue(new Callback<List<SpeakerModel>>() {
+                @Override
+                public void onResponse(Call<List<SpeakerModel>> call, Response<List<SpeakerModel>> response) {
+                    if(!response.isSuccessful())
+                    {
+                        Toast.makeText(getContext(), "Error : " + response.message().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                    speakersList = response.body();
+                    System.out.println("Size of Speaker List : " + speakersList.size());
+                    adapter2(speakersList);
                 }
-                adapter2();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onFailure(Call<List<SpeakerModel>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        }catch (Exception e)
+        {
+            Toast.makeText(getContext(),"Error : " + e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+        }
     }
 }
