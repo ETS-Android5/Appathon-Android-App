@@ -37,7 +37,8 @@ public class trackAdapter extends RecyclerView.Adapter<trackAdapter.Viewholder> 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         Track model = courseModelArrayList.get(position);
-        holder.track.setText("Track#"+ position + 1);
+        position = position + 1;
+        holder.track.setText("Track#"+ position );
         holder.heading.setText(model.getTitle());
         holder.content.setText(model.getDescription());
     }
