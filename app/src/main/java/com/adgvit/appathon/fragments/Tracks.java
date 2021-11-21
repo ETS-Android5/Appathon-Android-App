@@ -17,9 +17,10 @@ import com.adgvit.appathon.adapter.trackAdapter;
 import com.adgvit.appathon.model.trackDomain;
 import com.adgvit.appathon.networkmodels.Track;
 import com.adgvit.appathon.NetworkUtils.NetworkUtils;
-
+import com.airbnb.lottie.LottieAnimationView;
 import java.util.ArrayList;
 import java.util.List;
+import android.widget.ScrollView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
