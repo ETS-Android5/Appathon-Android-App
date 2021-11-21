@@ -45,8 +45,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.6'\
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.8'
 
+    //Smooth Bottom Bar
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.8'
 
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:26.5.0')

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/black"
-    tools:context=".faq">
+    tools:context="fragments.faq">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/faqAnimationView"
@@ -94,7 +94,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/faqRecyclerview"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"

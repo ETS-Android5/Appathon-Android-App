@@ -3,8 +3,11 @@ package com.adgvit.appathon.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.adgvit.appathon.R;
@@ -14,7 +17,21 @@ import com.adgvit.appathon.fragments.partners;
 import com.adgvit.appathon.fragments.timeline;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import me.ibrahimsn.lib.SmoothBottomBar;
+
 public class MainActivity extends AppCompatActivity {
+//    NavController navController;
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        SmoothBottomBar bottomBar;
+//        navController = new NavController(getApplicationContext());
+//        bottomBar = findViewById(R.id.nav_view);
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.menu,menu);
+//        bottomBar.setupWithNavController(menu,navController);
+//        return true;
+//    }
+
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
