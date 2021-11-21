@@ -61,6 +61,10 @@ public class timeline extends Fragment {
         day2List = new ArrayList<>();
         day3List = new ArrayList<>();
 
+        day1RecyclerView.setNestedScrollingEnabled(true);
+        day2RecyclerView.setNestedScrollingEnabled(true);
+        day3RecyclerView.setNestedScrollingEnabled(true);
+
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         myref1 = db.getReference("Timeline").child("day1");
         myref2=db.getReference("Timeline").child("day2");
