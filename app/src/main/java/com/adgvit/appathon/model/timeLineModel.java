@@ -1,24 +1,62 @@
 package com.adgvit.appathon.model;
 
-public class timeLineModel {
-    String description;
-    String heading;
-    String isCompleted;
-    String isFirst;
-    String link;
-    String time;
+import java.sql.Timestamp;
+import java.util.Date;
 
-    public timeLineModel(){
+public class timeLineModel {
+    public String _id;
+    public String name;
+    public int day;
+    public Timestamp date;
+    public String description;
+    public boolean onGoing;
+    public boolean isCompleted;
+
+    public timeLineModel()
+    {
 
     }
 
-    public timeLineModel(String description, String heading, String isCompleted, String isFirst, String link, String time) {
+    public timeLineModel(String _id, String name, int day, Timestamp date, String description, boolean onGoing, boolean isCompleted) {
+        this._id = _id;
+        this.name = name;
+        this.day = day;
+        this.date = date;
         this.description = description;
-        this.heading = heading;
+        this.onGoing = onGoing;
         this.isCompleted = isCompleted;
-        this.isFirst = isFirst;
-        this.link = link;
-        this.time = time;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 
     public String getDescription() {
@@ -29,43 +67,19 @@ public class timeLineModel {
         this.description = description;
     }
 
-    public String getHeading() {
-        return heading;
+    public boolean isOnGoing() {
+        return onGoing;
     }
 
-    public void setHeading(String heading) {
-        this.heading = heading;
+    public void setOnGoing(boolean onGoing) {
+        this.onGoing = onGoing;
     }
 
-    public String getIsCompleted() {
+    public boolean isCompleted() {
         return isCompleted;
     }
 
-    public void setIsCompleted(String isCompleted) {
-        this.isCompleted = isCompleted;
-    }
-
-    public String getIsFirst() {
-        return isFirst;
-    }
-
-    public void setIsFirst(String isFirst) {
-        this.isFirst = isFirst;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
     }
 }

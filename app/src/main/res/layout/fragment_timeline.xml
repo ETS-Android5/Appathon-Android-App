@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/day1RecyclerView" />
 
             <TextView
-                android:id="@+id/day2date"
+                android:id="@+id/day2date_timeline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -103,7 +103,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day2date" />
+                app:layout_constraintTop_toBottomOf="@+id/day2date_timeline" />
 
             <TextView
                 android:id="@+id/day1TextView"
@@ -120,7 +120,7 @@
                 app:layout_constraintTop_toBottomOf="@id/timelineLinearLayout" />
 
             <TextView
-                android:id="@+id/day1date"
+                android:id="@+id/day1date_timeline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -128,7 +128,7 @@
                 android:layout_marginStart="16dp"
                 android:textColor="#8E8E93"
                 android:textSize="14sp"
-                android:text="Saturday, 10 Apr 2021"
+                android:text=""
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/day1TextView"
                 android:layout_marginLeft="16dp" />
@@ -141,7 +141,7 @@
                 android:layout_marginTop="28dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day1date" />
+                app:layout_constraintTop_toBottomOf="@+id/day1date_timeline" />
 
             <TextView
                 android:id="@+id/day3TextView"
@@ -158,7 +158,7 @@
                 app:layout_constraintTop_toBottomOf="@id/day2RecyclerView" />
 
             <TextView
-                android:id="@+id/day3date"
+                android:id="@+id/day3date_timeline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -179,7 +179,7 @@
                 android:layout_marginBottom="80dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day3date" />
+                app:layout_constraintTop_toBottomOf="@+id/day3date_timeline" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

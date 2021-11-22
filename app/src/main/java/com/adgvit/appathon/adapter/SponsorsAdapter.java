@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.adgvit.appathon.R;
 import com.adgvit.appathon.model.SponsorsModel;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -41,10 +42,11 @@ public class SponsorsAdapter extends RecyclerView.Adapter<SponsorsAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         SponsorsModel model = sponsorList.get(position);
+        Glide.with(mContext).load(model.getImage()).into(holder.sponsorImage);
         holder.sponsorImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext,model.getSponsorLink(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,model.getWebsite(), Toast.LENGTH_SHORT).show();
             }
         });
     }

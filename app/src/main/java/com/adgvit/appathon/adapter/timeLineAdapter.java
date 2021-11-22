@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -27,7 +28,7 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
         this.context = context;
     }
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView eventTime,eventName,eventDescription,eventLink;
+        TextView eventTime,eventName,eventDescription,eventLink,day1date,day2date,day3date;
         ImageView imageTopDone,imageTopNotDone,imageMiddleDone,imageMiddleNotDone;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -39,6 +40,9 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             imageTopNotDone = itemView.findViewById(R.id.timelinetopnotdone);
             imageMiddleDone = itemView.findViewById(R.id.timelinemiddledone);
             imageMiddleNotDone = itemView.findViewById(R.id.timelinemiddlenotdone);
+            day1date = (TextView)itemView.findViewById(R.id.day1date_timeline);
+            day2date = (TextView)itemView.findViewById(R.id.day2date_timeline);
+            day3date = (TextView)itemView.findViewById(R.id.day3date_timeline);
         }
     }
 
@@ -51,16 +55,34 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        timeLineModel model = timelineList.get(position);
-        holder.eventTime.setText(model.getTime());
-        holder.eventName.setText(model.getHeading());
-        holder.eventDescription.setText(model.getDescription());
+        //timeLineModel model = timelineList.get(position);
+        String date = timelineList.get(position).getDate().toString().substring(0,10);
+        String time = timelineList.get(position).getDate().toString().substring(11,19);
+        try {
+            System.out.println("Date : " + date);
+            if (timelineList.get(position).getDay() == 1) {
+                holder.day1date.setText(date);
+            } else if (timelineList.get(position).getDay() == 2) {
+                holder.day2date.setText(date);
+            } else if (timelineList.get(position).getDay() == 3) {
+                holder.day3date.setText(date);
+            }
+        }catch (Exception e)
+        {
+            System.out.println("Error : " + e.getLocalizedMessage());
+            Toast.makeText(context, "Error : " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        holder.eventTime.setText(time);
+        holder.eventName.setText(timelineList.get(position).getName());
+        System.out.println("ListSize : " + timelineList.size());
+        holder.eventDescription.setText(timelineList.get(position).getDescription());
         //holder.eventLink.setText(model.getLink());
-        String isFirst=model.getIsFirst();
-        String isCompleted = model.getIsCompleted();
+        boolean onGoing = timelineList.get(position).isOnGoing();
+        boolean isCompleted = timelineList.get(position).isCompleted();
         //Log.i("isFirst",isFirst);
         //Log.i("isCompleted",isCompleted);
-        if(isCompleted.equals("true") && isFirst.equals("true")){
+        if(isCompleted == true && onGoing == true){
             Log.i("Type","Top Done");
             holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
@@ -71,7 +93,7 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             holder.imageMiddleDone.setVisibility(View.INVISIBLE);
             holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
         }
-        else if(isCompleted.equals("false") && isFirst.equals("true")){
+        else if(isCompleted == false && onGoing == true){
             Log.i("Type","Top");
             //holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
             //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
@@ -83,7 +105,7 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
 
         }
-        else if(isCompleted.equals("true") && isFirst.equals("false")){
+        else if(isCompleted == true && onGoing == false){
             Log.i("Type","Middle Done");
             holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
@@ -94,7 +116,7 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
             holder.imageTopDone.setVisibility(View.INVISIBLE);
             holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
         }
-        else if(isCompleted.equals("false") && isFirst.equals("false")){
+        else if(isCompleted == false && onGoing == false){
             Log.i("Type","Middle");
             //holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
             //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));

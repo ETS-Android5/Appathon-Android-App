@@ -1,28 +1,38 @@
 package com.adgvit.appathon.model;
 
 public class SponsorsModel {
-    String sponsorImage;
-    String sponsorLink;
+    String name;
+    String image;
+    String website;
 
-    public SponsorsModel(String sponsorImage, String sponsorLink) {
-        this.sponsorImage = sponsorImage;
-        this.sponsorLink = sponsorLink;
+    public SponsorsModel(String name, String image, String website) {
+        this.name = name;
+        this.image = image;
+        this.website = website;
     }
 
-    public String getSponsorImage() {
-        return sponsorImage;
+    public String getName() {
+        return name;
     }
 
-    public void setSponsorImage(String sponsorImage) {
-        this.sponsorImage = sponsorImage;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getSponsorLink() {
-        return sponsorLink;
+    public String getImage() {
+        return image;
     }
 
-    public void setSponsorLink(String sponsorLink) {
-        this.sponsorLink = sponsorLink;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
     public SponsorsModel(){
