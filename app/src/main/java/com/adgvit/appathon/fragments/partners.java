@@ -59,6 +59,7 @@ public class partners extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_partners, container, false);
+
         sponsorRecyclerView = view.findViewById(R.id.sponsorRecyclerView);
         speakerRecyclerView = view.findViewById(R.id.speakerRecyclerView);
         aboutUs = view.findViewById(R.id.aboutUsButton);
@@ -71,10 +72,10 @@ public class partners extends Fragment {
         sponsorsList =new ArrayList<>();
         speakersList = new ArrayList<>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myref = database.getReference("Partners").child("sponsors");
+        //myref = database.getReference("Partners").child("sponsors");
         //myref1 = database.getReference("Partners").child("speakers");
         addData();
-        adapter1();
+        //adapter1();
         //adapter2();
         onclickListeners();
         return view;
@@ -87,7 +88,7 @@ public class partners extends Fragment {
             }
         });
     }
-    public void adapter1(){
+    public void adapter1(List<SponsorsModel> sponsorsList){
         SponsorsAdapter sponsorsAdapter = new SponsorsAdapter(sponsorsList,view.getContext());
         LinearLayoutManager manager = new LinearLayoutManager(view.getContext());
         manager.setOrientation(RecyclerView.HORIZONTAL);
@@ -122,21 +123,45 @@ public class partners extends Fragment {
         }
     }
     public void addData(){
-        myref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds: snapshot.getChildren()){
-                    SponsorsModel model = ds.getValue(SponsorsModel.class);
-                    sponsorsList.add(model);
+        try {
+            Call<List<SponsorsModel>> call = NetworkUtils.networkAPI.getSponsors();
+            call.enqueue(new Callback<List<SponsorsModel>>() {
+                @Override
+                public void onResponse(Call<List<SponsorsModel>> call, Response<List<SponsorsModel>> response) {
+                    if (!response.isSuccessful()) {
+                        Toast.makeText(getContext(), "Error : " + response.message().toString(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        sponsorsList = response.body();
+                        adapter1(sponsorsList);
+                    }
                 }
-                adapter1();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onFailure(Call<List<SponsorsModel>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(getContext(), "Error : " + e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
+        }
+
+//        myref.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for(DataSnapshot ds: snapshot.getChildren()){
+//                    SponsorsModel model = ds.getValue(SponsorsModel.class);
+//                    sponsorsList.add(model);
+//                }
+//                adapter1();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 //        myref1.addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot snapshot) {
