@@ -1,6 +1,7 @@
 package com.adgvit.appathon.adapter;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.adgvit.appathon.R;
 import com.adgvit.appathon.model.timeLineModel;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyViewHolder> {
 
@@ -56,8 +59,14 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //timeLineModel model = timelineList.get(position);
-        String date = timelineList.get(position).getDate().toString().substring(0,10);
-        String time = timelineList.get(position).getDate().toString().substring(11,19);
+        long date1 = timelineList.get(position).getDate();
+
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(date1 * 1000);
+        String date = DateFormat.format("dd-MM-yyyy", cal).toString();
+        String time = DateFormat.format("HH:mm:ss",cal).toString();
+
+        //String time = timelineList.get(position).getDate().toString().substring(11,19);
         try {
             System.out.println("Date : " + date);
             if (timelineList.get(position).getDay() == 1) {

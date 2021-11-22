@@ -7,7 +7,7 @@ public class timeLineModel {
     public String _id;
     public String name;
     public int day;
-    public Timestamp date;
+    public long date;
     public String description;
     public boolean onGoing;
     public boolean isCompleted;
@@ -17,7 +17,7 @@ public class timeLineModel {
 
     }
 
-    public timeLineModel(String _id, String name, int day, Timestamp date, String description, boolean onGoing, boolean isCompleted) {
+    public timeLineModel(String _id, String name, int day, long date, String description, boolean onGoing, boolean isCompleted) {
         this._id = _id;
         this.name = name;
         this.day = day;
@@ -51,11 +51,11 @@ public class timeLineModel {
         this.day = day;
     }
 
-    public Timestamp getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
