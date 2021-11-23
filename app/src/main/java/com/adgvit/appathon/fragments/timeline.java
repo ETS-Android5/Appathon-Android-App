@@ -108,15 +108,15 @@ public class timeline extends Fragment {
                                 if (event.getDay() == 1) {
                                     cal.setTimeInMillis(event.getDate()*1000L);
 
-                                    day1date.setText(DateFormat.format("dd-MM-yyyy", cal).toString());
+                                    day1date.setText(DateFormat.format("EEEE, dd MMM yyyy", cal).toString());
                                     day1List.add(event);
                                 } else if (event.getDay() == 2) {
                                     cal.setTimeInMillis(event.getDate()*1000L);
-                                    day2date.setText(DateFormat.format("dd-MM-yyyy", cal).toString());
+                                    day2date.setText(DateFormat.format("EEEE, dd MMM yyyy", cal).toString());
                                     day2List.add(event);
                                 } else if (event.getDay() == 3) {
                                     cal.setTimeInMillis(event.getDate()*1000L);
-                                    day3date.setText(DateFormat.format("dd-MM-yyyy", cal).toString());
+                                    day3date.setText(DateFormat.format("EEEE, dd MMM yyyy", cal).toString());
                                     day3List.add(event);
                                 }
                             }
