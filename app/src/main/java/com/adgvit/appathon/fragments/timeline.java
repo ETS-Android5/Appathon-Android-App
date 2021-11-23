@@ -9,10 +9,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.adgvit.appathon.NetworkUtils.NetworkUtils;
@@ -30,8 +32,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -72,6 +78,9 @@ public class timeline extends Fragment {
         day1RecyclerView.setNestedScrollingEnabled(true);
         day2RecyclerView.setNestedScrollingEnabled(true);
         day3RecyclerView.setNestedScrollingEnabled(true);
+        TextView day1date = view.findViewById(R.id.day1date_timeline);
+        TextView day2date = view.findViewById(R.id.day2date_timeline);
+        TextView day3date = view.findViewById(R.id.day3date_timeline);
 
 //        FirebaseDatabase db = FirebaseDatabase.getInstance();
 //        myref1 = db.getReference("Timeline").child("day1");
@@ -89,21 +98,31 @@ public class timeline extends Fragment {
                     }
                     else
                         {
+
                             timeLine1 = response.body();
                             eventsList = timeLine1.getData();
+                            Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+
                             for (timeLineModel event : eventsList) {
                                 System.out.println("DAY : " + event.getDay());
                                 if (event.getDay() == 1) {
+                                    cal.setTimeInMillis(event.getDate()*1000L);
+
+                                    day1date.setText(DateFormat.format("dd-MM-yyyy", cal).toString());
                                     day1List.add(event);
                                 } else if (event.getDay() == 2) {
+                                    cal.setTimeInMillis(event.getDate()*1000L);
+                                    day2date.setText(DateFormat.format("dd-MM-yyyy", cal).toString());
                                     day2List.add(event);
                                 } else if (event.getDay() == 3) {
+                                    cal.setTimeInMillis(event.getDate()*1000L);
+                                    day3date.setText(DateFormat.format("dd-MM-yyyy", cal).toString());
                                     day3List.add(event);
                                 }
                             }
-                            System.out.println("Size1 : " + day1List.size());
-                            System.out.println("Size2 : " + day2List.size());
-                            System.out.println("Size3 : " + day3List.size());
+//                            System.out.println("Size1 : " + day1List.size());
+//                            System.out.println("Size2 : " + day2List.size());
+//                            System.out.println("Size3 : " + day3List.size());
 //                            recyclerView();
 
                             timeLineAdapter adapter = new timeLineAdapter(day1List,view.getContext());

@@ -17,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.adgvit.appathon.R;
 import com.adgvit.appathon.model.timeLineModel;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -61,26 +63,27 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
         //timeLineModel model = timelineList.get(position);
         long date1 = timelineList.get(position).getDate();
 
+
         Calendar cal = Calendar.getInstance(Locale.ENGLISH);
-        cal.setTimeInMillis(date1 * 1000);
-        String date = DateFormat.format("dd-MM-yyyy", cal).toString();
+        cal.setTimeInMillis(date1 * 1000L);
+//        String date = DateFormat.format("dd-MM-yyyy", cal).toString();
         String time = DateFormat.format("HH:mm:ss",cal).toString();
 
         //String time = timelineList.get(position).getDate().toString().substring(11,19);
-        try {
-            System.out.println("Date : " + date);
-            if (timelineList.get(position).getDay() == 1) {
-                holder.day1date.setText(date);
-            } else if (timelineList.get(position).getDay() == 2) {
-                holder.day2date.setText(date);
-            } else if (timelineList.get(position).getDay() == 3) {
-                holder.day3date.setText(date);
-            }
-        }catch (Exception e)
-        {
-            System.out.println("Error : " + e.getLocalizedMessage());
-            Toast.makeText(context, "Error : " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-        }
+//        try {
+//            System.out.println("Date : " + date);
+//            if (timelineList.get(position).getDay() == 1) {
+////                holder.day1date.setText(date);
+//            } else if (timelineList.get(position).getDay() == 2) {
+//                holder.day2date.setText(date);
+//            } else if (timelineList.get(position).getDay() == 3) {
+//                holder.day3date.setText(date);
+//            }
+//        }catch (Exception e)
+//        {
+//            System.out.println("Error : " + e.getLocalizedMessage());
+//            Toast.makeText(context, "Error : " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//        }
 
         holder.eventTime.setText(time);
         holder.eventName.setText(timelineList.get(position).getName());
