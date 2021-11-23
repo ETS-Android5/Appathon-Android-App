@@ -7,6 +7,7 @@ import com.adgvit.appathon.model.timeLine;
 import com.adgvit.appathon.model.timeLineModel;
 import com.adgvit.appathon.networkmodels.Speakers;
 import com.adgvit.appathon.networkmodels.Track;
+import com.adgvit.appathon.networkmodels.TrackList;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import retrofit2.http.GET;
 public interface NetworkAPI {
 
     @GET("details/tracks")
-    Call<List<Track>> getTrack();
+    Call<TrackList> getTrack();
 
     @GET("details/speakers")
     Call<List<SpeakerModel>> getSpeakers();

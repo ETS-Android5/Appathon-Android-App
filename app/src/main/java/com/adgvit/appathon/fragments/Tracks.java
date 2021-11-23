@@ -17,6 +17,7 @@ import com.adgvit.appathon.adapter.trackAdapter;
 import com.adgvit.appathon.model.trackDomain;
 import com.adgvit.appathon.networkmodels.Track;
 import com.adgvit.appathon.NetworkUtils.NetworkUtils;
+import com.adgvit.appathon.networkmodels.TrackList;
 import com.airbnb.lottie.LottieAnimationView;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,25 +67,23 @@ public class Tracks extends Fragment {
 //                "About Hello, Lorem ipsum dolor sit amet."));
 
         try {
-            Call<List<Track>> call = NetworkUtils.networkAPI.getTrack();
-            call.enqueue(new Callback<List<Track>>() {
+            Call<TrackList> call = NetworkUtils.networkAPI.getTrack();
+            call.enqueue(new Callback<TrackList>() {
                 @Override
-                public void onResponse(Call<List<Track>> call, Response<List<Track>> response) {
+                public void onResponse(Call<TrackList> call, Response<TrackList> response) {
                     if(!response.isSuccessful()){
                         Toast.makeText(getContext(), "Code "+ response.code() + " error "+response.message(),
                                 Toast.LENGTH_LONG).show();
                         return;
                     }
-                    List<Track> tracks = response.body();
-                    for (Track p:tracks){
-                        courseModelArrayList.add(p);
-                    }
+                    TrackList trackss = response.body();
+                    courseModelArrayList.addAll(trackss.getData());
                     System.out.println("Size" + courseModelArrayList.size());
                     adapter();
                 }
 
                 @Override
-                public void onFailure(Call<List<Track>> call, Throwable t) {
+                public void onFailure(Call<TrackList> call, Throwable t) {
                     Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
                 }

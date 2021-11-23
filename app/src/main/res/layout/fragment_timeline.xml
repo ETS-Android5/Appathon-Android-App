@@ -128,7 +128,6 @@
                 android:layout_marginStart="16dp"
                 android:textColor="#8E8E93"
                 android:textSize="14sp"
-                android:text=""
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/day1TextView"
                 android:layout_marginLeft="16dp" />
