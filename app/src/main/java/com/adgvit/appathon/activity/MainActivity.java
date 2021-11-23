@@ -17,54 +17,42 @@ import com.adgvit.appathon.fragments.partners;
 import com.adgvit.appathon.fragments.timeline;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import me.ibrahimsn.lib.OnItemSelectedListener;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
 public class MainActivity extends AppCompatActivity {
-//    NavController navController;
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        SmoothBottomBar bottomBar;
-//        navController = new NavController(getApplicationContext());
-//        bottomBar = findViewById(R.id.nav_view);
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.menu,menu);
-//        bottomBar.setupWithNavController(menu,navController);
-//        return true;
-//    }
-
-    BottomNavigationView bottomNavigationView;
+    private SmoothBottomBar smoothBottomBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        bottomNavigationView = findViewById(R.id.nav_view);
+        smoothBottomBar = (SmoothBottomBar) findViewById(R.id.bottomBar);
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new timeline()).commit();
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedfragment = null;
-                switch (item.getItemId()){
-                    case R.id.navigation_timeline:
-                        selectedfragment = new timeline();
-                        break;
-                    case R.id.navigation_partners:
-                        selectedfragment = new partners();
-                        break;
-                    case R.id.navigation_tracks:
-                        selectedfragment = new Tracks();
-                        break;
-                    case R.id.navigation_faq:
-                        selectedfragment = new faq();
-                        break;
-
-                }
-                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,selectedfragment).commit();
-                return  true;
+        smoothBottomBar.setOnItemSelectedListener((OnItemSelectedListener) i -> {
+            Fragment selectedFragment = null;
+            switch (i){
+                case 0:
+                    selectedFragment = new timeline();
+                    break;
+                case 1:
+                    selectedFragment = new partners();
+                    break;
+                case 2:
+                    selectedFragment = new Tracks();
+                    break;
+                case 3:
+                    selectedFragment = new faq();
+                    break;
             }
+
+            //Frag Transaction
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,selectedFragment).commit();
+            return true;
         });
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new timeline()).commit();
 
     }
 }
