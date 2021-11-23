@@ -30,4 +30,5 @@ public interface NetworkAPI {
 
     @GET("details/faq")
     Call<List<faqModel>> getFaq();
+
 }

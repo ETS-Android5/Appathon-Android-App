@@ -73,8 +73,8 @@ public class faq extends Fragment {
 
         ui1.setVisibility(View.INVISIBLE);
         lottieAnimationView.setVisibility(View.VISIBLE);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myref=database.getReference("FAQ");
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        myref=database.getReference("FAQ");
         loadData();
         addData();
         adapter();

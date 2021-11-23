@@ -1,30 +1,31 @@
 package com.adgvit.appathon.model;
 
 public class faqModel {
-    String question;
-    String answer;
+
+    String ques;
+    String ans;
     public faqModel(){
 
     }
 
     public faqModel(String question, String answer) {
-        this.question = question;
-        this.answer = answer;
+        this.ques = question;
+        this.ans = answer;
     }
 
     public String getQuestion() {
-        return question;
+        return ques;
     }
 
     public void setQuestion(String question) {
-        this.question = question;
+        this.ques = question;
     }
 
-    public String getAnswer() {
-        return answer;
+    public String getAns() {
+        return ans;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setAns(String ans) {
+        this.ans = ans;
     }
 }

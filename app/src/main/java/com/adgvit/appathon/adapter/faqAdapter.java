@@ -43,7 +43,7 @@ public class faqAdapter extends RecyclerView.Adapter<faqAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         faqModel item = list1.get(position);
         holder.question.setText("Q. "+item.getQuestion());
-        holder.answer.setText(item.getAnswer());
+        holder.answer.setText(item.getAns());
     }
 
     @Override
