@@ -8,40 +8,30 @@
     android:background="#ffffff"
     tools:context=".activity.MainActivity">
 
-    <!--<me.ibrahimsn.lib.SmoothBottomBar
-        android:id="@+id/nav_view"
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
         android:layout_width="0dp"
         android:layout_height="72dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        app:itemTextColor="@drawable/navigation_text"
-        app:itemIconTint="@drawable/background_ic_bottom_navbar"
-        android:background="#121212"
+        app:textColor="@color/black"
+        app:iconTintActive="@color/black"
+        app:iconTint="#686868"
+        app:indicatorColor="#FBE4FF"
+        android:background="#FBE4FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:backgroundColor="#121212"
-        app:menu="@menu/menu"/>-->
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        app:itemTextColor="#5123B5"
-        app:itemIconTint="#5123B5"
-        android:background="#121212"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu" />
+        app:menu="@menu/menu"/>
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

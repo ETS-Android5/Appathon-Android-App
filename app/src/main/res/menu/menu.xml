@@ -14,7 +14,7 @@
     <item
         android:id="@+id/navigation_tracks"
         android:title="Tracks"
-        android:icon="@drawable/ic_tracks"/>
+        android:icon="@drawable/ic_tracks1"/>
 
     <item
         android:id="@+id/navigation_faq"
