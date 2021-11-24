@@ -45,7 +45,6 @@
                 android:id="@+id/timelineLinearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -56,13 +55,25 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="88dp"
                     android:fontFamily="@font/circular_std"
                     android:text="Timeline"
                     android:textColor="#FFFFFF"
                     android:textSize="34sp"
                     android:textStyle="bold" />
             </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="57dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_discord"
+                android:id="@+id/discord"
+                />
 
             <TextView
                 android:id="@+id/day2TextView"

@@ -62,10 +62,9 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aboutUsButton">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/partnersHead"
@@ -75,6 +74,7 @@
                     android:layout_marginLeft="16dp"
                     android:fontFamily="@font/circular_std"
                     android:text="Partners"
+                    android:layout_marginTop="88dp"
                     android:textColor="@color/white"
                     android:textSize="34sp"
                     android:textStyle="bold" />

@@ -4,20 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/activity_flash_screen.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/domainrecycleritem.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/faq_item.xml" value="0.11927083333333334" />
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_faq.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_partners.xml" value="0.24259259259259258" />
-        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_profile.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_profile_logged_in.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_timeline.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_track.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_tracks.xml" value="0.20677083333333332" />
-        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/fragment_tracks2.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/problemrecycleritem.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/timelinerecycleritem.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/track_item.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/Admin/Appathon-Android-App/app/src/main/res/layout/tracks_empty.xml" value="0.19322916666666667" />
         <entry key="..\:/Users/Admin/OneDrive - vit.ac.in/Documents/Appathon-Android-App/app/src/main/res/layout/activity_flash_screen.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/Admin/OneDrive - vit.ac.in/Documents/Appathon-Android-App/app/src/main/res/layout/activity_main.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/Admin/OneDrive - vit.ac.in/Documents/Appathon-Android-App/app/src/main/res/layout/faq_item.xml" value="0.27291666666666664" />
@@ -37,24 +31,27 @@
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/ic_middledone.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/ic_top1.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/ic_topdone.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/ic_tracks.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/drawable/samplesponsor.xml" value="0.18125" />
-        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/domainrecycleritem.xml" value="0.16875" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/faq_item.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_faq.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_partners.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_profile.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_profile_logged_in.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_timeline.xml" value="0.14855072463768115" />
-        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_track.xml" value="0.16875" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_tracks.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/fragment_tracks2.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/speakersrecycleritem.xml" value="0.6666666666666666" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/sponsorsrecycleritem.xml" value="0.1" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/timelinerecycleritem.xml" value="0.5625" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/layout/track_item.xml" value="0.44541484716157204" />
-        <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/PROJECTS/Appathon-Android-App/app/src/main/res/menu/menu.xml" value="0.16875" />
+        <entry key="app/src/main/res/drawable/corner_radius_ongoingbtn.xml" value="0.27291666666666664" />
+        <entry key="app/src/main/res/layout/fragment_faq.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/fragment_partners.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/fragment_profile_logged_in.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/fragment_timeline.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/fragment_track.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/timelinerecycleritem.xml" value="0.8730141593431429" />
+        <entry key="app/src/main/res/layout/track_item.xml" value="0.25677083333333334" />
       </map>
     </option>
   </component>

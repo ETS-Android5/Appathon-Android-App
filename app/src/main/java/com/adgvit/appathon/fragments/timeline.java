@@ -1,7 +1,9 @@
 package com.adgvit.appathon.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +55,7 @@ public class timeline extends Fragment {
     ScrollView ui2;
     DatabaseReference myref1,myref2,myref3;
     LottieAnimationView lottieAnimationView;
+    ImageView discord;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +68,14 @@ public class timeline extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_timeline, container, false);
 
+        discord=view.findViewById(R.id.discord);
+        discord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://discord.gg/6UMDyjjA"));
+                startActivity(browserIntent);
+            }
+        });
         ui2 = view.findViewById(R.id.scrollView2);
         day1RecyclerView = view.findViewById(R.id.day1RecyclerView);
         day2RecyclerView = view.findViewById(R.id.day2RecyclerView);
@@ -75,9 +87,9 @@ public class timeline extends Fragment {
         day2List = new ArrayList<>();
         day3List = new ArrayList<>();
 
-        day1RecyclerView.setNestedScrollingEnabled(true);
-        day2RecyclerView.setNestedScrollingEnabled(true);
-        day3RecyclerView.setNestedScrollingEnabled(true);
+        day1RecyclerView.setNestedScrollingEnabled(false);
+        day2RecyclerView.setNestedScrollingEnabled(false);
+        day3RecyclerView.setNestedScrollingEnabled(false);
         TextView day1date = view.findViewById(R.id.day1date_timeline);
         TextView day2date = view.findViewById(R.id.day2date_timeline);
         TextView day3date = view.findViewById(R.id.day3date_timeline);
