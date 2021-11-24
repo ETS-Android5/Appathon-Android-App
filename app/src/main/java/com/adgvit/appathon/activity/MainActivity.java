@@ -21,6 +21,7 @@ import com.adgvit.appathon.fragments.faq;
 import com.adgvit.appathon.fragments.partners;
 import com.adgvit.appathon.fragments.timeline;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this);
             bottomSheetDialog.setContentView(R.layout.welcome_page);
             bottomSheetDialog.setCanceledOnTouchOutside(true);
+
+            //BottomSheetBehavior.from(bottomSheetDialog.findViewById(R.id.)).setDraggable(false);
+
             bottomSheetDialog.show();
         }
 //        Start.setOnClickListener(new View.OnClickListener() {
