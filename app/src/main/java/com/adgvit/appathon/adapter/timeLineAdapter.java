@@ -92,56 +92,97 @@ public class timeLineAdapter extends RecyclerView.Adapter<timeLineAdapter.MyView
         //holder.eventLink.setText(model.getLink());
         boolean onGoing = timelineList.get(position).isOnGoing();
         boolean isCompleted = timelineList.get(position).isCompleted();
-        //Log.i("isFirst",isFirst);
-        //Log.i("isCompleted",isCompleted);
-        if(isCompleted == true && onGoing == true){
-            Log.i("Type","Top Done");
-            holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
-            holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
-            holder.eventLink.setVisibility(View.VISIBLE);
-            holder.eventLink.setEnabled(true);
-            holder.imageTopDone.setVisibility(View.VISIBLE);
-            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
-            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
-            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
-        }
-        else if(isCompleted == false && onGoing == true){
-            Log.i("Type","Top");
-            //holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
-            //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
-            holder.eventLink.setVisibility(View.INVISIBLE);
-            holder.eventLink.setEnabled(false);
-            holder.imageTopNotDone.setVisibility(View.VISIBLE);
-            holder.imageTopDone.setVisibility(View.INVISIBLE);
-            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
-            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
 
-        }
-        else if(isCompleted == true && onGoing == false){
-            Log.i("Type","Middle Done");
+        if(isCompleted)
+        {
             holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
             holder.eventLink.setVisibility(View.VISIBLE);
+
+            if(position == 0)
+            {
+                holder.imageTopDone.setVisibility(View.VISIBLE);
+                holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+                holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+                holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
+            }
+            else
+                {
+                    holder.imageMiddleDone.setVisibility(View.VISIBLE);
+                    holder.imageTopDone.setVisibility(View.INVISIBLE);
+                    holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+                    holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
+                }
+
             holder.eventLink.setEnabled(true);
-            holder.imageMiddleDone.setVisibility(View.VISIBLE);
-            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
-            holder.imageTopDone.setVisibility(View.INVISIBLE);
-            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
         }
-        else if(isCompleted == false && onGoing == false){
-            Log.i("Type","Middle");
-            //holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
-            //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
-            holder.eventLink.setVisibility(View.INVISIBLE);
-            holder.eventLink.setEnabled(false);
-            holder.imageMiddleNotDone.setVisibility(View.VISIBLE);
-            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
-            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
-            holder.imageTopDone.setVisibility(View.INVISIBLE);
-        }
-        else {
-            Log.i("Type","Else");
-        }
+        else
+            {
+                holder.eventLink.setVisibility(View.INVISIBLE);
+                holder.eventLink.setEnabled(false);
+                if(position == 0)
+                {
+                    holder.imageTopNotDone.setVisibility(View.VISIBLE);
+                    holder.imageTopDone.setVisibility(View.INVISIBLE);
+                    holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+                    holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
+                }
+                else
+                    {
+                        holder.imageMiddleNotDone.setVisibility(View.VISIBLE);
+                        holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+                        holder.imageTopDone.setVisibility(View.INVISIBLE);
+                        holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+                    }
+            }
+//        if(isCompleted == true && onGoing == true){
+//            Log.i("Type","Top Done");
+//            holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
+//            holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
+//            holder.eventLink.setVisibility(View.VISIBLE);
+//            holder.eventLink.setEnabled(true);
+//            holder.imageTopDone.setVisibility(View.VISIBLE);
+//            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+//            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+//            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
+//        }
+//        else if(isCompleted == false && onGoing == true){
+//            Log.i("Type","Top");
+//            //holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
+//            //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
+//            holder.eventLink.setVisibility(View.INVISIBLE);
+//            holder.eventLink.setEnabled(false);
+//            holder.imageTopNotDone.setVisibility(View.VISIBLE);
+//            holder.imageTopDone.setVisibility(View.INVISIBLE);
+//            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+//            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
+//
+//        }
+//        else if(isCompleted == true && onGoing == false){
+//            Log.i("Type","Middle Done");
+//            holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
+//            holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_purple));
+//            holder.eventLink.setVisibility(View.VISIBLE);
+//            holder.eventLink.setEnabled(true);
+//            holder.imageMiddleDone.setVisibility(View.VISIBLE);
+//            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+//            holder.imageTopDone.setVisibility(View.INVISIBLE);
+//            holder.imageMiddleNotDone.setVisibility(View.INVISIBLE);
+//        }
+//        else if(isCompleted == false && onGoing == false){
+//            Log.i("Type","Middle");
+//            //holder.eventName.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
+//            //holder.eventTime.setTextColor(ContextCompat.getColor(context,R.color.timeline_black));
+//            holder.eventLink.setVisibility(View.INVISIBLE);
+//            holder.eventLink.setEnabled(false);
+//            holder.imageMiddleNotDone.setVisibility(View.VISIBLE);
+//            holder.imageMiddleDone.setVisibility(View.INVISIBLE);
+//            holder.imageTopNotDone.setVisibility(View.INVISIBLE);
+//            holder.imageTopDone.setVisibility(View.INVISIBLE);
+//        }
+//        else {
+//            Log.i("Type","Else");
+//        }
     }
 
     @Override
