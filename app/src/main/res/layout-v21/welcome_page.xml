@@ -90,7 +90,7 @@
 
                 <TextView
                     android:id="@+id/timeline_text"
-                    android:layout_width="200dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
@@ -98,6 +98,7 @@
                     android:text="Get Regular Updates about what's happening when and never miss another event or Review."
                     android:textColor="#CABDBD"
                     android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView6"
                     app:layout_constraintTop_toBottomOf="@+id/timeline" />
 
@@ -132,10 +133,10 @@
 
                 <TextView
                     android:id="@+id/partner_text"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="330dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
                     android:fontFamily="@font/circular_std"
                     android:text="Find out about the Amazing Brands and People who helped us create this wonderful sprint of innovation called Appathon’21."
                     android:textColor="#CABDBD"
@@ -174,8 +175,8 @@
 
                 <TextView
                     android:id="@+id/tracks_text"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="339dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/circular_std"
@@ -216,7 +217,7 @@
 
                 <TextView
                     android:id="@+id/faq_text"
-                    android:layout_width="200dp"
+                    android:layout_width="match_co "
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
