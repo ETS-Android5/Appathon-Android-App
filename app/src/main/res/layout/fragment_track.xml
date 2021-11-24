@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="88dp"
-            android:fontFamily="@font/helveticaneue_medium"
+            android:fontFamily="@font/circular_std"
             android:paddingLeft="10dp"
             android:text="Tracks"
             android:textColor="@color/white"

@@ -33,7 +33,7 @@
                 android:id="@+id/faqQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/helveticaneue_regular"
+                android:fontFamily="@font/circular_std"
                 android:paddingLeft="15dp"
                 android:paddingTop="14dp"
                 android:text="Q. Will ODs be provided?"
