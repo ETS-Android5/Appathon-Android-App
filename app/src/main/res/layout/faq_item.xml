@@ -12,8 +12,6 @@
         app:cardCornerRadius="17dp"
         tools:layout_editor_absoluteX="17dp"
         android:layout_margin="8dp"
-
-
         tools:layout_editor_absoluteY="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +31,7 @@
                 android:id="@+id/faqQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/circular_std"
+                android:fontFamily="@font/bold"
                 android:paddingLeft="15dp"
                 android:paddingTop="14dp"
                 android:text="Q. Will ODs be provided?"
@@ -49,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/circular_std"
+                android:fontFamily="@font/medium"
                 android:paddingLeft="15dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="18dp"

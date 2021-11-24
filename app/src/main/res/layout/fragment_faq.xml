@@ -45,7 +45,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="326dp"
-            android:fontFamily="@font/circular_std"
+            android:fontFamily="@font/bold"
             android:paddingLeft="14dp"
             android:text="FAQs"
             android:textColor="#FFFFFF"

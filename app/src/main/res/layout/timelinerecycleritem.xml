@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/circular_std"
+            android:fontFamily="@font/bold"
             android:text="Opening Ceremony"
             android:textColor="#ffffff"
             android:textSize="16sp"
@@ -137,11 +137,10 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="35dp"
-            android:fontFamily="@font/circular_std"
+            android:fontFamily="@font/book"
             android:text="Welcome Address to the Guests and Participants"
             android:textColor="#AEAEB2"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:textSize="12sp" />
 
 
     </LinearLayout>

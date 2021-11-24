@@ -64,9 +64,21 @@
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/Projects1/Appathon-Android-App/app/src/main/res/layout/fragment_tracks.xml" value="0.1" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/Projects1/Appathon-Android-App/app/src/main/res/layout/speakersrecycleritem.xml" value="0.1" />
         <entry key="..\:/Users/Jatin Dhall/Desktop/Desktop File/VIT/VIT/CLUBS,CHAPTERS,TEAMS/ADG/Projects1/Appathon-Android-App/app/src/main/res/layout/welcome_page.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout-v21/welcome_page.xml" value="0.5683139534883721" />
+        <entry key="app/src/main/res/layout/activity_flash_screen.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/faq_item.xml" value="0.2533531132149174" />
+        <entry key="app/src/main/res/layout/fragment_faq.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_partners.xml" value="0.25677083333333334" />
         <entry key="app/src/main/res/layout/fragment_timeline.xml" value="0.25677083333333334" />
         <entry key="app/src/main/res/layout/fragment_track.xml" value="0.25677083333333334" />
-        <entry key="app/src/main/res/layout/timelinerecycleritem.xml" value="0.13177083333333334" />
+        <entry key="app/src/main/res/layout/fragment_tracks.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/fragment_tracks2.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/speakersrecycleritem.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/sponsorsrecycleritem.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/layout/timelinerecycleritem.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/track_item.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>
