@@ -2,6 +2,7 @@ package com.adgvit.appathon.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private SmoothBottomBar smoothBottomBar;
 
     private ImageView Start;
-    private ConstraintLayout welcome;
+    public static CardView aboutUsCardView;
+    private ConstraintLayout eventChoose;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = getSharedPreferences("com.adgvit.appathon", MODE_PRIVATE).edit();
         Start = findViewById(R.id.startbtn);
-        welcome = findViewById(R.id.welcome);
+        eventChoose = findViewById(R.id.eventChoose);
+        aboutUsCardView = findViewById(R.id.aboutUsCardView);
         SharedPreferences sp= getSharedPreferences("com.adgvit.appathon", MODE_PRIVATE);
         String token = sp.getString("token", "");
         if (token.equals("")){
@@ -80,8 +83,29 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,selectedFragment).commit();
             return true;
         });
+        eventChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                aboutUsCardView.setVisibility(View.GONE);
+            }
+        });
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new timeline()).commit();
 
+    }
+    public static void aboutUs(){
+        aboutUsCardView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        if (aboutUsCardView.getVisibility()==View.VISIBLE){
+            aboutUsCardView.setVisibility(View.GONE);
+        }else{
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(0);
+        }
     }
 }

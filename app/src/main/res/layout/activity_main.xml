@@ -35,8 +35,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/aboutUsCardView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,10 +46,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/eventChoose"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="120dp"
-            android:background="#121212"
+            android:background="@drawable/aboutus_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +109,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4"
-                app:srcCompat="@drawable/ic_learnmore" />
+                app:srcCompat="@drawable/learnmore" />
 
             <ImageView
                 android:id="@+id/imageView8"
