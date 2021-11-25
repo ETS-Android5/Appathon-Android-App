@@ -87,7 +87,7 @@ public class FirebaseNotificationService extends com.google.firebase.messaging.F
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_tracks)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 //.setBadgeIconType(13)
                 .setContentTitle(title)
                 .setContentText(messageBody)
