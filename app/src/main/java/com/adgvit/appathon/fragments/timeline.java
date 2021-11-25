@@ -66,7 +66,7 @@ public class timeline extends Fragment {
         discord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://discord.gg/6UMDyjjA"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://discord.gg/zXXPFSant8"));
                 startActivity(browserIntent);
             }
         });

@@ -30,8 +30,9 @@
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
+        android:overScrollMode="never"
 
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -93,22 +94,22 @@
                 android:id="@+id/day2date_timeline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/medium"
-                android:layout_marginStart="16dp"
+                android:text=""
                 android:textColor="#8E8E93"
                 android:textSize="14sp"
-                android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day2TextView"
-                android:layout_marginLeft="16dp" />
+                app:layout_constraintTop_toBottomOf="@+id/day2TextView" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/day2RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:overScrollMode="never"
                 android:layout_marginTop="28dp"
+                android:overScrollMode="never"
                 android:paddingBottom="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -133,14 +134,14 @@
                 android:id="@+id/day1date_timeline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/medium"
-                android:layout_marginStart="16dp"
                 android:textColor="#8E8E93"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day1TextView"
-                android:layout_marginLeft="16dp" />
+                app:layout_constraintTop_toBottomOf="@+id/day1TextView" />
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -149,6 +150,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="32dp"
+                android:overScrollMode="never"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -172,22 +174,22 @@
                 android:id="@+id/day3date_timeline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/medium"
-                android:layout_marginStart="16dp"
+                android:text=""
                 android:textColor="#8E8E93"
                 android:textSize="14sp"
-                android:text=""
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/day3TextView"
-                android:layout_marginLeft="16dp" />
+                app:layout_constraintTop_toBottomOf="@+id/day3TextView" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/day3RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:layout_marginBottom="80dp"
+                android:overScrollMode="never"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/day3date_timeline" />
