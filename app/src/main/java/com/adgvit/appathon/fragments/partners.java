@@ -63,6 +63,7 @@ public class partners extends Fragment {
 
         sponsorRecyclerView = view.findViewById(R.id.sponsorRecyclerView);
         speakerRecyclerView = view.findViewById(R.id.speakerRecyclerView);
+        speakerRecyclerView.setNestedScrollingEnabled(false);
         aboutUs = view.findViewById(R.id.aboutUsButton);
         ui1 = view.findViewById(R.id.partnersConstraintLayout);
         animation = view.findViewById(R.id.partnersAnimationView);
