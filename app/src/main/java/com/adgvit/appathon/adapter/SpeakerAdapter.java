@@ -1,6 +1,8 @@
 package com.adgvit.appathon.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,10 +39,19 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
         SpeakerModel model = speakerList.get(position);
         holder.speakerName.setText(model.getName());
         holder.speakerDesignation.setText(model.getSpeakerDesignation());
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int itemPosition = holder.getAdapterPosition();
+                String item = speakerList.get(itemPosition).getLink();
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(item));
+                mContext.startActivity(browserIntent);
+            }
+        });
         System.out.println(speakerList.get(position).getName() + " , " + speakerList.get(position).getPicture());
 
         Glide.with(mContext).load(model.getPicture()).into(holder.speakerImage);
+
 
     }
 
@@ -49,7 +60,7 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
         return speakerList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView speakerName,speakerDesignation;
         ImageView speakerImage;
         public MyViewHolder(@NonNull View itemView) {
@@ -58,5 +69,6 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
             speakerDesignation = itemView.findViewById(R.id.speakerDesig);
             speakerImage = itemView.findViewById(R.id.speakerImageView);
         }
+
     }
 }

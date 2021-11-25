@@ -30,6 +30,7 @@ public class Flash_screen extends AppCompatActivity {
                 finally {
                     Intent intent = new Intent(Flash_screen.this , MainActivity.class);
                     startActivity(intent);
+                    finish();
 
                 }
                 }
