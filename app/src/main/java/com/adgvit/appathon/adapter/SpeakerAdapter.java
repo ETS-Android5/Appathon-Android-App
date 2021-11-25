@@ -48,7 +48,7 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
                 mContext.startActivity(browserIntent);
             }
         });
-        System.out.println(speakerList.get(position).getName() + " , " + speakerList.get(position).getPicture());
+//        System.out.println(speakerList.get(position).getName() + " , " + speakerList.get(position).getPicture());
 
         Glide.with(mContext).load(model.getPicture()).into(holder.speakerImage);
 

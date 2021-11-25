@@ -1,6 +1,8 @@
 package com.adgvit.appathon.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +48,9 @@ public class SponsorsAdapter extends RecyclerView.Adapter<SponsorsAdapter.MyView
         holder.sponsorImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext,model.getWebsite(), Toast.LENGTH_SHORT).show();
+                String item = sponsorList.get(position).getWebsite();
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(item));
+                mContext.startActivity(browserIntent);
             }
         });
     }
