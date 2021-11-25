@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.adgvit.appathon.NetworkUtils.NetworkUtils;
 import com.adgvit.appathon.R;
+import com.adgvit.appathon.activity.MainActivity;
 import com.adgvit.appathon.adapter.SpeakerAdapter;
 import com.adgvit.appathon.adapter.SponsorsAdapter;
 import com.adgvit.appathon.model.SpeakerModel;
@@ -84,7 +85,7 @@ public class partners extends Fragment {
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MainActivity.aboutUs();
             }
         });
     }

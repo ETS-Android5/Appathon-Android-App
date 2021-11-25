@@ -2,17 +2,21 @@ package com.adgvit.appathon.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -32,15 +36,40 @@ public class MainActivity extends AppCompatActivity {
     private SmoothBottomBar smoothBottomBar;
 
     private ImageView Start;
-    private ConstraintLayout welcome;
+    public static CardView aboutUsCardView;
+    private ConstraintLayout eventChoose;
+    ImageView button,privacy;
+    public static Animation fadeIn,fadeOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        fadeIn= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fadein);
+        fadeOut= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fadeout);
         SharedPreferences.Editor editor = getSharedPreferences("com.adgvit.appathon", MODE_PRIVATE).edit();
         Start = findViewById(R.id.startbtn);
-        welcome = findViewById(R.id.welcome);
+        eventChoose = findViewById(R.id.eventChoose);
+        aboutUsCardView = findViewById(R.id.aboutUsCardView);
+        button = findViewById(R.id.imageView7);
+        privacy = findViewById(R.id.imageView8);
+        privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setData(Uri.parse("https://fakeyudi.notion.site/Privacy-Policy-f1037b07e1f941dfb3a16ed75738ab02"));
+                startActivity(intent);
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setData(Uri.parse("https://appathon.adgvit.com/"));
+                startActivity(intent);
+            }
+        });
         SharedPreferences sp= getSharedPreferences("com.adgvit.appathon", MODE_PRIVATE);
         String token = sp.getString("token", "");
         if (token.equals("")){
@@ -81,8 +110,32 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,selectedFragment).commit();
             return true;
         });
+        eventChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                aboutUsCardView.setAnimation(fadeOut);
+                aboutUsCardView.setVisibility(View.GONE);
+            }
+        });
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new timeline()).commit();
 
+    }
+    public static void aboutUs(){
+        aboutUsCardView.setVisibility(View.VISIBLE);
+        aboutUsCardView.setAnimation(fadeIn);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        if (aboutUsCardView.getVisibility()==View.VISIBLE){
+            aboutUsCardView.setAnimation(fadeOut);
+            aboutUsCardView.setVisibility(View.GONE);
+        }else{
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(0);
+        }
     }
 }
