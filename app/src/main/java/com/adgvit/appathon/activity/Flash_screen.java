@@ -20,7 +20,7 @@ public class Flash_screen extends AppCompatActivity {
 
             public void run(){
                 try{
-                    sleep(4000);
+                    sleep(2500);
 
                 }
                 catch (Exception e){
