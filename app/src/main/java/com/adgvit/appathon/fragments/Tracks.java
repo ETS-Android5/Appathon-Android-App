@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.adgvit.appathon.NetworkInterface.NetworkAPI;
@@ -32,6 +33,7 @@ public class Tracks extends Fragment {
     private RecyclerView recyclerView1;
     private ArrayList<Track> courseModelArrayList;
     View view;
+    ImageView patience;
 
 
     @Override
@@ -59,6 +61,7 @@ public class Tracks extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_track, container, false);
+        patience = view.findViewById(R.id.patienceTracks);
        courseModelArrayList = new ArrayList<>();
         recyclerView1 = view.findViewById(R.id.recyclerview);
 //        courseModelArrayList.add(new trackDomain("Track #1", "Substantial Development", "About Hello, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
@@ -77,9 +80,14 @@ public class Tracks extends Fragment {
                         return;
                     }
                     TrackList trackss = response.body();
-                    courseModelArrayList.addAll(trackss.getData());
-                    System.out.println("Size" + courseModelArrayList.size());
-                    adapter();
+                    if(trackss.isLive()){
+                        courseModelArrayList.addAll(trackss.getData());
+                        System.out.println("Size" + courseModelArrayList.size());
+                        adapter();
+                        patience.setVisibility(View.GONE);
+                    }else {
+                        patience.setVisibility(View.VISIBLE);
+                    }
                 }
 
                 @Override
@@ -101,8 +109,7 @@ public class Tracks extends Fragment {
 
     public void adapter(){
         trackAdapter customAdapter = new trackAdapter(this, courseModelArrayList);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(),
-                LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView1.setLayoutManager(linearLayoutManager);
         recyclerView1.setAdapter(customAdapter);
 

@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="46dp"
             android:layout_marginEnd="326dp"
             android:fontFamily="@font/bold"
             android:paddingLeft="14dp"
@@ -104,7 +104,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" 
-            tools:listitem="@layout/faq_item" android:layout_height="0dp"/>
+            tools:listitem="@layout/faq_item"
+            android:layout_height="0dp"/>
 
         <ImageView
             android:id="@+id/micButton1"

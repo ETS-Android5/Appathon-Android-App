@@ -38,6 +38,16 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
+    <ImageView
+        android:id="@+id/patienceTracks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_patience"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tracks" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
