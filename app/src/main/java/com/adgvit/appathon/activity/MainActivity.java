@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         String token = sp.getString("token", "");
         if (token.equals("")){
             editor.putString("token", "token");
+            editor.commit();
             Intent i = new Intent(MainActivity.this,WelcomeActivity.class);
             startActivity(i);
 
