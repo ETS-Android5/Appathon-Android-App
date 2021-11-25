@@ -3,12 +3,30 @@ package com.adgvit.appathon.model;
 public class SpeakerModel {
     String picture;
     String name;
-    String speakerDesignation;
+    String description;
+    String link;
 
-    public SpeakerModel(String picture, String name, String speakerDesignation) {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public SpeakerModel(String picture, String name, String speakerDesignation, String link) {
         this.picture = picture;
         this.name = name;
-        this.speakerDesignation = speakerDesignation;
+        this.description = speakerDesignation;
+        this.link = link;
     }
 
     public String getPicture() {
@@ -28,11 +46,11 @@ public class SpeakerModel {
     }
 
     public String getSpeakerDesignation() {
-        return speakerDesignation;
+        return description;
     }
 
     public void setSpeakerDesignation(String speakerDesignation) {
-        this.speakerDesignation = speakerDesignation;
+        this.description = speakerDesignation;
     }
 
     public SpeakerModel(){
