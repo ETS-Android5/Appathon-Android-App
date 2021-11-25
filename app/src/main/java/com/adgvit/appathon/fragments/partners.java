@@ -26,11 +26,6 @@ import com.adgvit.appathon.model.SponsorsModel;
 import com.adgvit.appathon.networkmodels.Speakers;
 import com.adgvit.appathon.networkmodels.Track;
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +40,6 @@ public class partners extends Fragment {
 //    List<SpeakerModel> speakerList;
     RecyclerView sponsorRecyclerView,speakerRecyclerView;
     ImageView aboutUs;
-    DatabaseReference myref,myref1;
     LottieAnimationView animation;
     ConstraintLayout ui1;
     List<SpeakerModel> speakersList;
@@ -73,7 +67,6 @@ public class partners extends Fragment {
 
         sponsorsList =new ArrayList<>();
         speakersList = new ArrayList<>();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
         //myref = database.getReference("Partners").child("sponsors");
         //myref1 = database.getReference("Partners").child("speakers");
         addData();
@@ -131,7 +124,7 @@ public class partners extends Fragment {
                 @Override
                 public void onResponse(Call<List<SponsorsModel>> call, Response<List<SponsorsModel>> response) {
                     if (!response.isSuccessful()) {
-                        Toast.makeText(getContext(), "Error : " + response.message().toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "Error : " + response.message().toString(), Toast.LENGTH_SHORT).show();
                     } else {
                         sponsorsList = response.body();
                         adapter1(sponsorsList);
@@ -146,7 +139,7 @@ public class partners extends Fragment {
         }
         catch (Exception e)
         {
-            Toast.makeText(getContext(), "Error : " + e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), "Error : " + e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
         }
 
 //        myref.addValueEventListener(new ValueEventListener() {
@@ -187,7 +180,7 @@ public class partners extends Fragment {
                 public void onResponse(Call<List<SpeakerModel>> call, Response<List<SpeakerModel>> response) {
                     if(!response.isSuccessful())
                     {
-                        Toast.makeText(getContext(), "Error : " + response.message().toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "Error : " + response.message().toString(), Toast.LENGTH_SHORT).show();
                     }
                     speakersList = response.body();
                     System.out.println("Size of Speaker List : " + speakersList.size());
@@ -201,7 +194,7 @@ public class partners extends Fragment {
             });
         }catch (Exception e)
         {
-            Toast.makeText(getContext(),"Error : " + e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+//            Toast.makeText(getContext(),"Error : " + e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
         }
     }
 }

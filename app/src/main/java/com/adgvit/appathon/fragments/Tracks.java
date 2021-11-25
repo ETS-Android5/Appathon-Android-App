@@ -75,8 +75,7 @@ public class Tracks extends Fragment {
                 @Override
                 public void onResponse(Call<TrackList> call, Response<TrackList> response) {
                     if(!response.isSuccessful()){
-                        Toast.makeText(getContext(), "Code "+ response.code() + " error "+response.message(),
-                                Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getContext(), "Code "+ response.code() + " error "+response.message()Toast.LENGTH_LONG).show();
                         return;
                     }
                     TrackList trackss = response.body();
@@ -92,13 +91,13 @@ public class Tracks extends Fragment {
 
                 @Override
                 public void onFailure(Call<TrackList> call, Throwable t) {
-                    Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
                 }
             });
         }
         catch (Exception e){
-            Toast.makeText(getContext(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(getContext(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
         }
 
 

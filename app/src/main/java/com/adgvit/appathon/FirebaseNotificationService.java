@@ -5,11 +5,12 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
@@ -23,7 +24,6 @@ import java.util.Objects;
 
 public class FirebaseNotificationService extends com.google.firebase.messaging.FirebaseMessagingService{
 
-    private static final String TAG = "NotificationService";
     private static final String CHANNEL_ID = "PushNotifications";
 
     public FirebaseNotificationService() {
@@ -72,7 +72,7 @@ public class FirebaseNotificationService extends com.google.firebase.messaging.F
 
     @Override
     public void onNewToken(@NonNull String token) {
-        Log.d(TAG, "Refreshed token : "+token);
+        //Log.d(TAG, "Refreshed token : "+token);
         //send token to your app server
     }
 
@@ -87,12 +87,12 @@ public class FirebaseNotificationService extends com.google.firebase.messaging.F
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,CHANNEL_ID)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                //.setBadgeIconType(13)
-                .setContentTitle(title)
+                .setSmallIcon(R.drawable.ic_applogo)
+                //.setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.drawable.ic_launcher))
+                .setContentText(title)
                 .setContentText(messageBody)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-              //  .setColor(getResources().getColor(R.color.log_bg_color))
+//                .setColor(getResources().getColor(R.color.shimmercolour))
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)

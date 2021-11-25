@@ -29,8 +29,6 @@ import com.adgvit.appathon.R;
 import com.adgvit.appathon.adapter.faqAdapter;
 import com.adgvit.appathon.model.faqModel;
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -51,7 +49,6 @@ public class faq extends Fragment {
     RecyclerView faq;
     faqAdapter faqAdapter;
     ImageView micButton;
-    DatabaseReference myref;
     LottieAnimationView lottieAnimationView;
     ConstraintLayout ui1;
     @Override
@@ -149,7 +146,7 @@ public class faq extends Fragment {
                 public void onResponse(Call<List<faqModel>> call, Response<List<faqModel>> response) {
                     if(!response.isSuccessful())
                     {
-                        Toast.makeText(getContext(),"Error : " + response.message().toString(),Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getContext(),"Error : " + response.message().toString(),Toast.LENGTH_LONG).show();
                     }
                     else
                     {
@@ -167,7 +164,7 @@ public class faq extends Fragment {
             });
         }catch (Exception e)
         {
-            Toast.makeText(getContext(),"Error : " + e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+//            Toast.makeText(getContext(),"Error : " + e.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
         }
 
 

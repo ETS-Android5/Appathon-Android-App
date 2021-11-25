@@ -13,9 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetworkUtils {
     public static String baseURL = "https://appathon-backend.herokuapp.com/";
     public static OkHttpClient getClientInstance() {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+        OkHttpClient client = new OkHttpClient.Builder().build();
         return client;
     }
 

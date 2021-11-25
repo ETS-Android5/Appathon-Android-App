@@ -26,11 +26,6 @@ import com.adgvit.appathon.adapter.timeLineAdapter;
 import com.adgvit.appathon.model.timeLine;
 import com.adgvit.appathon.model.timeLineModel;
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -53,7 +48,6 @@ public class timeline extends Fragment {
     timeLine timeLine1;
     RecyclerView day1RecyclerView,day2RecyclerView,day3RecyclerView;
     ScrollView ui2;
-    DatabaseReference myref1,myref2,myref3;
     LottieAnimationView lottieAnimationView;
     ImageView discord;
     @Override
@@ -106,7 +100,7 @@ public class timeline extends Fragment {
                 public void onResponse(Call<timeLine> call, Response<timeLine> response) {
                     if(!response.isSuccessful())
                     {
-                        Toast.makeText(getContext(), "Error1 : " + response.message(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), "Error1 : " + response.message(), Toast.LENGTH_SHORT).show();
                     }
                     else
                         {
@@ -185,14 +179,14 @@ public class timeline extends Fragment {
 
                 @Override
                 public void onFailure(Call<timeLine> call, Throwable t) {
-                    Toast.makeText(getContext(), "Error2 : " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(), "Error2 : " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
 
         }
         catch (Exception e)
         {
-            Toast.makeText(getContext(), "Error3 : " + e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), "Error3 : " + e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
         }
         return view;
     }
