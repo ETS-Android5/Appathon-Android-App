@@ -3,6 +3,11 @@
     <img width="250" alt="Appathon_icon" src="https://user-images.githubusercontent.com/73430464/150797567-6b48dc22-3cb6-4798-b09e-d1245acdb099.png">
   </a>
 </p> 
+<p align="center">
+  <img src="https://img.shields.io/badge/Android%20Studio-2020.3.1-green">
+  <img src="https://img.shields.io/badge/Java-11-yellow">
+  <img src="https://img.shields.io/badge/Platform-Android-orange">
+</p>
 
 # APPATHON'21
 
