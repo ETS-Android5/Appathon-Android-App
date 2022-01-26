@@ -6,6 +6,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Android%20Studio-2020.3.1-green">
   <img src="https://img.shields.io/badge/Java-11-yellow">
+  <img src="https://img.shields.io/badge/XML-%20%20-yellow">
   <img src="https://img.shields.io/badge/Platform-Android-orange">
 </p>
 
